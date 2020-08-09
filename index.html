@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kenneth, The Automated Conversationalist</title>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Righteous&display=swap" rel="stylesheet">
+<style type="text/css">
+body{
+	background-image: linear-gradient(60deg,#6CA4EE,#A66CEE);
+	height: calc(100vh - 30px);
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+}
+input{
+	width: calc(100% - 10px);
+	max-width: 650px;
+	font-size: 14px;
+	font-family: 'Quicksand', sans-serif;
+	outline: none;
+}
+input:focus{
+	box-shadow: 0 0 3px #85BEFF;
+	border: 0.5px solid grey;
+	padding: 2.5px;
+}
+h1{
+	font-family: 'Righteous', cursive;
+	font-weight: normal;
+}
+.user-message, .response{
+	color: black;
+	padding: 5px;
+	display: block;
+	border-radius: 5px;
+	max-width: 80%;
+}
+.user-message{
+	background-color: white;
+	float: right;
+}
+.response{
+	background-color: #E5E7DD;
+	float: left;
+}
+#chat{
+	max-width: 650px;
+}
+</style>
+</head>
+<body>
+	<h1>Kenneth, The Automated Conversationalist</h1>
+	Kenneth is not one of those boring chat bots that work for companies. Kenneth only wants to have interesting conversations with his friends! Kenneth is so cool that he has a github repository, <a href="https://github.com">here</a>!<br><br>
+	By: Kira L<br><br>
+	<div id="chat">
+		
+	</div>
+	<span id="whosTyping"></span><br>
+	<input id="inp" placeholder="Enter your message here, and Kenneth will reply.">
+
+<script type="text/javascript">
+function el(id){
+	return document.getElementById(id);
+}
+</script>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
