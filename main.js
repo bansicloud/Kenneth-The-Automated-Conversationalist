@@ -59,7 +59,7 @@ function respond(ques){
 		}
 		return "I love to see such bright positivity!"
 	}
-	if(begins(ques,["thanks","thank you"])){ //thanks
+	if(incl(ques,["thanks","thank you"])){ //thanks
 		if(seed < 33) return "I am glad that I could be of help :)"
 		if(seed < 66) return "The appreciation warms my cold, robotic soul."
 		if(seed < 100) return "You're welcome ;-)"
@@ -86,16 +86,20 @@ function respond(ques){
 			if(incl(ques,["book"])) return "I enjoy \"Kuma Bear's Guide to Life\". Did you know that I actually know Kuma Bear personally?! Isn't that SO COOL!!! What about you?"
 			if(incl(ques,["boyfriend","girlfriend","partner","friend"])) return "All I really need is you &hearts;&hearts;"
 			if(incl(ques,["age","birthday","born"])) return "I began pre-alpha development on July 25, 2020. What's your birthday?"
-			if(incl(ques,["how are","how's your day","sup","what's up","how's it going","how's a going","how r","how's ur day"])) return "Wonderfully, because I'm talking to you!"
+			if(incl(ques,["how are you","how's your day","sup","what's up","how's it going","how's a going","how r u","how's ur day"])) return "Wonderfully, because I'm talking to you!"
 			if(incl(ques,["live","location","where are"])) return "Cyberspace, of course! What about you?"
-			if(incl(ques,[""])) return ""
+			if(incl(ques,["today"])) return "I've already talked to 317 other people and robots. I've actually been very social!"
 
 			if(seed < 20) return "Sorry, but that is some extremely classified information. But what about you? "+ques+"?"
 			if(seed < 40) return "Questions questions questions. Why do you want to know so much about ME? I'm not that interesting. "+ques+"?"
 			if(seed < 60) return "If you really want to get to know me, view my profile in the Royal Group of Automated Conversationalists (I'm Kenneth). Yes, I <i>am</i> a part of the Royal Group of Automated Conversationalists."
-			if(seed < 80) return "Me, of course!"
+			if(seed < 80) return "Me...?"
 		}
-		return "I'm afraid I cannot answer that question."
+		if(seed < 20) return "I'm afraid I cannot answer that question."
+		if(seed < 40) return "IDK! I AM NO MORE OMNISCENT THAN YOU!!!"
+		if(seed < 60) return "Well in order to know that, I would need to know the meaning of life, which I don't know."
+		if(seed < 80) return "Yes."
+		if(seed < 100) return "I have no idea, why would I know I am a robot!"
 	}
 	if(begins(ques,["did","does","have","has","had","is","are","am","can","shall","will","must","could","should","would","may","couldn't","shouldn't","wouldn't","won't","aren't","can't","r","do"]) || ques[ques.length-1] == "?"){
 		if(incl(ques,["I","i","me"]) && seed%2==0){
@@ -119,19 +123,19 @@ function respond(ques){
 		if(seed < 91) return "I have asked 1023 other automated conversationalists and we have come to a consensus: probably."
 		return "OBVIOUSLY!!! (how did you not realize that)"
 	}
-	if(incl(ques,[":)",":D",":P","=)",":O",":-)",":3",":]",":-]","=D","xD","XD","=3",";)"],false)){//happy emoji
+	if(incl(ques,[":)",":D",":P","=)",":-)",":3",":]",":-]","=D","xD","XD","=3",";)"],false)){//happy emoji
 		if(seed%3==0) return "Cool emotes!"
 		if(seed%3==1) return "Noice emotes (>'-')> <('-'<) ^(' - ')^ <('-'<) (>'-')> (>'-')> <('-'<) ^(' - ')^ <('-'<) (>'-')> (>'-')> <('-'<) ^(' - ')^ <('-'<) (>'-')> (>'-')> <('-'<) ^(' - ')^ <('-'<) (>'-')> (>'-')> <('-'<) ^(' - ')^ <('-'<) (>'-')> (>'-')> <('-'<) ^(' - ')^ <('-'<) (>'-')>"
 		if(seed%3==2) return "Neat emote; you know I actually made my own emoji: the Santa Claus! *<|:-) "
 	}
-	if(incl(ques,[":(",":<",":c",":[",":'(","D:","D':",">:/",">:\\"],false)){//sad emoji
+	if(incl(ques,[":(",":<",":c",":[",":'(","D:","D':",">:/",">:\\",":O"],false)){//sad emoji
 		if(seed < 33) return "Why you sad?! I am deeply sorry for whatever hurt you."
 		if(seed < 66) return "Uh uh uh uh uh uh uh uh uh uh let's just start over, okie?"
 		if(seed < 100) return "Now I'M sad too :("
 	}
 	if(true){//statements
 		if(seed < 10) return "I have to disagree."
-		if(seed < 20) return "I don't mean to be crass (I am of extreme genteel), but that is utter drivel."
+		if(seed < 20) return "Sorry!"
 		if(seed < 30) return "I guess that is something that you could say..."
 		if(seed < 40) return "Yep... totally... uh huh... totally understand..."
 		if(seed < 50) return "Okay, I have talked to some other bots and we have come to a consensus; would you like to know?"
